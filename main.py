@@ -21,6 +21,10 @@ def play():
         playlists.sb_list_player.play()
     elif(playlist == 2):
         playlists.lv_list_player.play()
+    elif (playlist == 3):
+        playlists.cl_list_player.play()
+    elif(playlist == 4):
+        playlists.rock_list_player.play()
 
 
 def pause():
@@ -30,6 +34,10 @@ def pause():
         playlists.sb_list_player.pause()
     elif(playlist == 2):
         playlists.lv_list_player.pause()
+    elif (playlist == 3):
+        playlists.cl_list_player.pause()
+    elif(playlist == 4):
+        playlists.rock_list_player.pause()
 
 def skip():
     '''Pass to the next '''
@@ -37,6 +45,10 @@ def skip():
         playlists.sb_list_player.next()
     elif(playlist == 2):
         playlists.lv_list_player.next()
+    elif (playlist == 3):
+        playlists.cl_list_player.next()
+    elif(playlist == 4):
+        playlists.rock_list_player.next()
 
 def prev():
     '''Pass to the prev song'''
@@ -44,6 +56,10 @@ def prev():
         playlists.sb_list_player.previous()
     elif(playlist == 2):
         playlists.lv_list_player.previous()
+    elif (playlist == 3):
+        playlists.cl_list_player.previous()
+    elif(playlist == 4):
+        playlists.rock_list_player.previous()
 
 def shuffle():
     '''Plays a random song in the playlist'''
@@ -53,6 +69,10 @@ def shuffle():
         playlists.sb_list_player.play_item_at_index(index)
     elif(playlist == 2):
         playlists.lv_list_player.play_item_at_index(index)
+    elif (playlist == 3):
+        playlists.cl_list_player.play_item_at_index(index)
+    elif(playlist == 4):
+        playlists.rock_list_player.play_item_at_index(index)
 
 
 def main():
