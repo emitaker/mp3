@@ -11,7 +11,7 @@ pb_skip = 22 #pin 15
 pb_prev = 27 #pin 13
 pb_shuffle = 17 #pin 11
 
-playlist = 1
+playlist = 1 #aqui ver lo del menu
 
 
 def play():
@@ -63,6 +63,7 @@ def shuffle():
     '''Plays a random song in the playlist'''
     index = random.randint(0,4)
     print(index)
+
     if (playlist == 1):
         playlists.sb_list_player.play_item_at_index(index)
     elif(playlist == 2):
