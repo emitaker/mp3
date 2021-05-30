@@ -5,7 +5,6 @@ import random
 import MediaInfo #to do
 import playlists
 
-
 pb_play = 6 #pin 31
 pb_pause = 5 #pin 29
 pb_skip = 22 #pin 15
@@ -14,9 +13,9 @@ pb_shuffle = 17 #pin 11
 
 playlist = 1
 
+
 def play():
     '''Play the music when the button is pushed'''
-    #media = vlc.MediaPlayer("/home/pi/Documents/mp3/music/slowed_reverb/aunque_no_sea_conmigo_slowed_reverb.mp3")
     if (playlist == 1):
         playlists.sb_list_player.play()
     elif(playlist == 2):
@@ -29,7 +28,6 @@ def play():
 
 def pause():
     '''Pause the music when the button is pushed'''
-    #media = vlc.MediaPlayer("/home/pi/Documents/mp3/music/slowed_reverb/aunque_no_sea_conmigo_slowed_reverb.mp3")
     if (playlist == 1):
         playlists.sb_list_player.pause()
     elif(playlist == 2):
