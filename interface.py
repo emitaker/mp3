@@ -1,57 +1,60 @@
-import pygame
-from pygame.locals import *
+import pygame 
 
-class Text:
-    """Create a text object."""
+pygame.init()
 
-    def __init__(self, text, pos, **options):
-        self.text = text
-        self.pos = pos
+height = 800
+width = 650
 
-        self.fontname = None
-        self.fontsize = 72
-        self.fontcolor = Color('black')
-        self.set_font()
-        self.render()
+screen = pygame.display.set_mode((height, width))
 
-    def set_font(self):
-        """Set the Font object from name and size."""
-        self.font = pygame.font.Font(self.fontname, self.fontsize)
 
-    def render(self):
-        """Render the text into an image."""
-        self.img = self.font.render(self.text, True, self.fontcolor)
-        self.rect = self.img.get_rect()
-        self.rect.topleft = self.pos
+def menu():
+    running = True
+    contador = 0
+    while running:
+        screen.fill(('#111010')) # #111010 = black
+        #Text: Music
+        font = pygame.font.SysFont(None, 48)
+        img = font.render('Music', True, ('#f6f6f6')) # #f6f6f6 = white
+        screen.blit(img, (210,415))
+        #Musicicon2
+        image = pygame.image.load('D:\Programacion\Programs\mp3\pics\musicicon2.png')
+        image.convert()
+        image = pygame.transform.scale(image, (200,200))
+        screen.blit(image, (155,180))
+        #Weather
+        image = pygame.image.load('D:\Programacion\Programs\mp3\pics\weather.png')
+        image.convert()
+        image = pygame.transform.scale(image, (200,200))
+        screen.blit(image, (440,180))
+        #Text: Weather
+        font2 = pygame.font.SysFont(None, 48)
+        img2 = font.render('Weather', True, ('#f6f6f6')) # #f6f6f6 = white
+        screen.blit(img2, (473,415))
 
-    def draw(self):
-        """Draw the text image to the screen."""
-        Menu.screen.blit(self.img, self.rect)
+        contador += 1
+        print(contador)
+        if contador >= 1000:
+            playlists()
+            return 1
+        
+        pygame.display.update()
 
-class Menu:
-    """Create a single-window app with multiple scenes."""
+def playlists():
+    running = True
+    while running:
+        screen.fill(('#111010'))
+        pygame.display.update()
 
-    def __init__(self):
-        """Initialize pygame and the application."""
-        pygame.init()
-        flags = RESIZABLE
-        Menu.screen = pygame.display.set_mode((1500, 980), flags)
-        Menu.t = Text('lol', pos=(20, 20))
+def mp3():
+    running = True
+    while running:
+        screen.fill(('#111010'))
 
-        Menu.running = True
+def weather():
+    running = True
+    while running:
+        screen.fill(('#111010'))
 
-    def run(self):
-        """Run the main event loop."""
-        while Menu.running:
-            for event in pygame.event.get():
-                if event.type == QUIT:
-                    Menu.running = False
 
-            Menu.screen.fill(Color('gray'))
-            Menu.t.draw()
-            pygame.display.update()
-
-        pygame.quit()
-
-if __name__ == '__main__':
-    Menu().run()
+menu()
