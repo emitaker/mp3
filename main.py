@@ -5,11 +5,11 @@ import random
 import MediaInfo #to do
 import playlists
 
-pb_play = 6 #pin 31
-pb_pause = 5 #pin 29
+pb_play = 17 #pin 11
+pb_pause = 27 #pin 13
 pb_skip = 22 #pin 15
-pb_prev = 27 #pin 13
-pb_shuffle = 17 #pin 11
+pb_prev = 5 #pin 29
+pb_shuffle = 6 #pin 31
 
 playlist = 1 #aqui ver lo del menu
 
