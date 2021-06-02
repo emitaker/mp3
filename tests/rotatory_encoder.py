@@ -5,7 +5,6 @@ import playlists
 counter = 10
 
 sound = 10
-playlists.sb_media_player.audio_set_volume(sound)
 
 Enc_A = 18  
 Enc_B = 16  
@@ -20,6 +19,10 @@ def init():
     GPIO.add_event_detect(Enc_A, GPIO.RISING, callback=rotation_decode, bouncetime=10)
     return
  
+def play():
+    global sound
+    playlists.sb_volume_player.get_media_player().audio_set_volume(sound)
+    playlists.sb_volume_player.play()
  
 def rotation_decode(Enc_A):
     global counter
@@ -52,7 +55,6 @@ def main():
     try:
         init()
         while True :
-            playlists.sb_media_player.play()
             sleep(1)
  
     except KeyboardInterrupt:
