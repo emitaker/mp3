@@ -10,7 +10,7 @@ sb_volume_player = sb_volume.media_list_player_new()#new-------------------
 
 sr_songs = sb_player.media_new("/home/pi/Documents/mp3/music/slowed_reverb/aunque_no_sea_conmigo_slowed_reverb.mp3") #creating the song, but still not added
 #----------------------------------------------------------------------
-sb_volume_list = sb_volume.media_list_new(["/home/pi/Documents/mp3/music/slowed_reverb/aunque_no_sea_conmigo_slowed_reverb.mp3"])
+sb_volume_list = sb_volume.media_list_new(["/home/pi/Documents/mp3/music/slowed_reverb/aunque_no_sea_conmigo_slowed_reverb.mp3", "/home/pi/Documents/mp3/music/slowed_reverb/bad_bunny_120_slowed_reverb.mp3"])
 sb_volume_player.set_media_list(sb_volume_list)
 #----------------------------------------------------------------------
 slowed_reverb.add_media(sr_songs) #adding the song to the playlist
