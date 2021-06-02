@@ -1,10 +1,16 @@
 import vlc
 #Slowed reverb
-sb_list_player = vlc.MediaListPlayer()
+
+
+sb_list_player = vlc.MediaListPlayer() #playlist player
+sb_media_player = vlc.MediaPlayer() #song player
 sb_player = vlc.Instance()
 slowed_reverb = sb_player.media_list_new() #creating playlist
 
 sr_songs = sb_player.media_new("/home/pi/Documents/mp3/music/slowed_reverb/aunque_no_sea_conmigo_slowed_reverb.mp3") #creating the song, but still not added
+
+sb_media_player.set_media(srsongs)
+
 slowed_reverb.add_media(sr_songs) #adding the song to the playlist
 sb_list_player.set_media_list(slowed_reverb) #setting media list to the media player
     
