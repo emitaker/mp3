@@ -110,7 +110,7 @@ def rotation_decode(Enc_A):
             playlists.cl_list_player.get_media_player().audio_set_volume(sound)
         elif(playlist == 4):
             playlists.rock_list_player.get_media_player().audio_set_volume(sound)
-        print("direction -> ", sound_play)
+        print("direction -> ", sound)
         while Switch_B == 0:
             Switch_B = GPIO.input(Enc_B)
         while Switch_B == 1:
@@ -127,7 +127,7 @@ def rotation_decode(Enc_A):
             playlists.cl_list_player.get_media_player().audio_set_volume(sound)
         elif(playlist == 4):
             playlists.rock_list_player.get_media_player().audio_set_volume(sound)        
-        print("direction <- ", sound_play)
+        print("direction <- ", sound)
         while Switch_A == 1:
             Switch_A = GPIO.input(Enc_A)
         return
