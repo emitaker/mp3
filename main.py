@@ -90,16 +90,16 @@ def prev():
     '''Pass to the prev song'''
     global sound_prev
     if (playlist == 1):
-        playlists.slowed_reverb_player.get_media_player().audio_set_volume(sound_prev)
+        #playlists.slowed_reverb_player.get_media_player().audio_set_volume(sound_prev)
         playlists.slowed_reverb_player.previous()
     elif(playlist == 2):
-        playlists.lv_list_player.get_media_player().audio_set_volume(sound_prev)
+        #playlists.lv_list_player.get_media_player().audio_set_volume(sound_prev)
         playlists.lv_list_player.previous()
     elif (playlist == 3):
-        playlists.cl_list_player.get_media_player().audio_set_volume(sound_prev)
+        #playlists.cl_list_player.get_media_player().audio_set_volume(sound_prev)
         playlists.cl_list_player.previous()
     elif(playlist == 4):
-        playlists.rock_list_player.get_media_player().audio_set_volume(sound_prev)
+        #playlists.rock_list_player.get_media_player().audio_set_volume(sound_prev)
         playlists.rock_list_player.previous()
 
 
@@ -139,6 +139,14 @@ def rotation_decode(Enc_A):
         sound_next += 1
         sound_prev += 1
         sound_shuffle += 1
+        if (playlist == 1):
+            playlists.slowed_reverb_player.get_media_player().audio_set_volume(sound_prev)
+        elif(playlist == 2):
+            playlists.lv_list_player.get_media_player().audio_set_volume(sound_prev)
+        elif (playlist == 3):
+            playlists.cl_list_player.get_media_player().audio_set_volume(sound_prev)
+        elif(playlist == 4):
+            playlists.rock_list_player.get_media_player().audio_set_volume(sound_prev)
         print("direction -> ", sound_play)
         while Switch_B == 0:
             Switch_B = GPIO.input(Enc_B)
