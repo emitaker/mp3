@@ -10,8 +10,11 @@ pb_pause = 27 #pin 13
 pb_skip = 22 #pin 15
 pb_prev = 5 #pin 29
 pb_shuffle = 6 #pin 31
+Enc_A = 18  
+Enc_B = 16 
 
 playlist = 1 #aqui ver lo del menu
+
 
 sound = 60
 
@@ -126,10 +129,8 @@ def rotation_decode(Enc_A):
     Switch_B = GPIO.input(Enc_B)
  
     if (Switch_A == 1) and (Switch_B == 0):
-        counter += 1
         sound += 1
-        print("direction -> ", counter)
-        print(sound)
+        print("direction -> ", sound)
         while Switch_B == 0:
             Switch_B = GPIO.input(Enc_B)
         while Switch_B == 1:
@@ -137,10 +138,8 @@ def rotation_decode(Enc_A):
         return
  
     elif (Switch_A == 1) and (Switch_B == 1):
-        counter -= 1
         sound -= 1
-        print("direction <- ", counter)
-        print(sound)
+        print("direction <- ", sound)
         while Switch_A == 1:
             Switch_A = GPIO.input(Enc_A)
         return
