@@ -100,6 +100,7 @@ def prev():
 
 def shuffle():
     '''Plays a random song in the playlist'''
+    global sound
     index = random.randint(0,4)
     print(index)
 
