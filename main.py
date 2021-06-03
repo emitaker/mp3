@@ -15,7 +15,6 @@ Enc_B = 16
 
 playlist = 1 #aqui ver lo del menu
 
-
 sound = 60
 
 
@@ -122,9 +121,8 @@ def shuffle():
 
 
 def rotation_decode(Enc_A):
-    global counter
     global sound
-    sleep(0.002)
+    time.sleep(0.002)
     Switch_A = GPIO.input(Enc_A)
     Switch_B = GPIO.input(Enc_B)
  
