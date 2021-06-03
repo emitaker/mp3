@@ -24,6 +24,9 @@ weather_menu = pygame_menu.Menu(
     width=800
     )
 
+weather_menu.add.button('Back',pygame_menu.events.BACK)
+
+
 #-------------------------------------------------------------------------
 #
 #Music Menu
@@ -44,6 +47,8 @@ music_menu = pygame_menu.Menu(
     width=800
     )
 
+music_menu.add.button('Back',pygame_menu.events.BACK)
+
 #-------------------------------------------------------------------------
 #
 #Playlists Menu
@@ -60,7 +65,8 @@ playlists_menu = pygame_menu.Menu(
     height=650, #height
     theme=playlists_theme,
     title='Playlists',
-    width=800
+    width=800,
+    joystick_enabled=True
     )
 playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\slow.jpg', scale=(0.25,0.25),margin=(-370,15))
 playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\live.jpg', scale=(0.25,0.25),margin=(-370,15))
@@ -71,7 +77,8 @@ playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\ock.jpg', scale=(0.2
 playlists_menu.add.button('Slowed & Reverb', music_menu, margin=(-140,12))
 playlists_menu.add.button('Live', music_menu, margin=(-280,10))
 playlists_menu.add.button('Classic',music_menu, margin=(-252,10))
-playlists_menu.add.button('Rock',music_menu, margin=(-269,0))
+playlists_menu.add.button('Rock',music_menu, margin=(-269,10))
+playlists_menu.add.button('Back',pygame_menu.events.BACK, margin=(-269,0))
 playlists_menu.add_vertical_margin(230)
 
 #-------------------------------------------------------------------------
