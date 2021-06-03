@@ -1,23 +1,18 @@
 import vlc
 #Slowed reverb
 
-
-sb_list_player = vlc.MediaListPlayer() #playlist player
-sb_player = vlc.Instance()
-sb_volume = vlc.Instance()#new-------------------------------------------
-slowed_reverb = sb_player.media_list_new() #creating playlist
-sb_volume_player = sb_volume.media_list_player_new()#new-------------------
-
-sr_songs = sb_player.media_new("/home/pi/Documents/mp3/music/slowed_reverb/aunque_no_sea_conmigo_slowed_reverb.mp3") #creating the song, but still not added
-#----------------------------------------------------------------------
-sb_volume_list = sb_volume.media_list_new(
-                ["/home/pi/Documents/mp3/music/slowed_reverb/aunque_no_sea_conmigo_slowed_reverb.mp3", 
+sr_inst = vlc.Instance()#Creating VLC instance
+slowed_reverb_player = sr_inst.media_list_player_new()#Creating media list player
+sr_songs = sr_inst.media_list_new(
+                [
+                "/home/pi/Documents/mp3/music/slowed_reverb/aunque_no_sea_conmigo_slowed_reverb.mp3", 
                 "/home/pi/Documents/mp3/music/slowed_reverb/bad_bunny_120_slowed_reverb.mp3",
                 "/home/pi/Documents/mp3/music/slowed_reverb/beach_house_space_song_slowed_reverb.mp3",
                 "/home/pi/Documents/mp3/music/slowed_reverb/fuentes_de_ortiz _ed_maverick_slowed_reverb.mp3",
-                "/home/pi/Documents/mp3/music/slowed_reverb/liue_suffer_with_me_slowed_reverb.mp3"]
+                "/home/pi/Documents/mp3/music/slowed_reverb/liue_suffer_with_me_slowed_reverb.mp3"
+                ]
                 )
-sb_volume_player.set_media_list(sb_volume_list)
+slowed_reverb_player.set_media_list(sr_songs)
 #----------------------------------------------------------------------
 slowed_reverb.add_media(sr_songs) #adding the song to the playlist
 sb_list_player.set_media_list(slowed_reverb) #setting media list to the media player
