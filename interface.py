@@ -5,6 +5,7 @@ import vlc
 
 
 playlist = main.playlist
+print(playlist)
 
 pygame.init()
 screen = pygame.display.set_mode((800, 650))
@@ -39,9 +40,10 @@ def weather():
 #slowed and reverb menu
 #
 #------------------------------------------------------    
-
 def slowed_reverb():
-    print("slow")
+    global playlist
+    playlist = 1
+    print(playlist)
     slowed_reverb_theme = pygame_menu.themes.THEME_DARK.copy()
     slowed_reverb_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
     slowed_reverb_theme.title_offset = (20,0)
@@ -68,7 +70,9 @@ def slowed_reverb():
 #
 #------------------------------------------------------
 def live():
-    print("live")
+    global playlist
+    playlist = 2
+    print(playlist)
     live_theme = pygame_menu.themes.THEME_DARK.copy()
     live_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
     live_theme.title_offset = (20,0)
@@ -96,7 +100,9 @@ def live():
 #
 #------------------------------------------------------
 def classic():
-    print("classic")
+    global playlist
+    playlist = 3
+    print(playlist)
     classic_theme = pygame_menu.themes.THEME_DARK.copy()
     classic_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
     classic_theme.title_offset = (20,0)
@@ -124,7 +130,9 @@ def classic():
 #
 #------------------------------------------------------
 def rock():
-    print("rock")
+    global playlist
+    playlist = 4
+    print(playlist)
     rock_theme = pygame_menu.themes.THEME_DARK.copy()
     rock_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
     rock_theme.title_offset = (20,0)
