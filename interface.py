@@ -1,8 +1,10 @@
 import pygame
 import pygame_menu
 
+
 pygame.init()
 screen = pygame.display.set_mode((800, 650))
+    
 
 #-------------------------------------------------------------------------
 #
@@ -21,7 +23,8 @@ weather_menu = pygame_menu.Menu(
     height=650, #height
     theme=weather_theme,
     title='Weather',
-    width=800
+    width=800,
+    joystick_enabled=True
     )
 
 weather_menu.add.button('Back',pygame_menu.events.BACK)
@@ -30,44 +33,94 @@ weather_menu.add.button('Back',pygame_menu.events.BACK)
 #
 #slowed and reverb menu
 #
-#--------------------------------------
+#------------------------------------------------------    
+
 slowed_reverb_theme = pygame_menu.themes.THEME_DARK.copy()
-slowed_reverb_theme.title_background_color=('#fc3a4b') # This line puts the title background in some kind of red color
-slowed_reverb_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_SIMPLE
+slowed_reverb_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
 slowed_reverb_theme.title_offset = (20,0)
 slowed_reverb_theme.background_color=('#111010') # Black
 slowed_reverb_theme.widget_font_size = 45
 
 slowed_reverb_menu = pygame_menu.Menu(
-    height=650, #height
-    theme=music_theme,
-    title='Music',
-    width=800
+        height=650, #height
+        theme=slowed_reverb_theme,
+        title='',
+        width=800,
+        joystick_enabled=True
     )
+
+slowed_reverb_menu.add_image('D:\Programacion\Programs\mp3\pics\slow.jpg', scale=(0.5,0.5),margin=(-370,15))
 
 slowed_reverb_menu.add.button('Back',pygame_menu.events.BACK)
-#-------------------------------------------------------------------------
-#
-#Music Menu
-#
-#-------------------------------------------------------------------------
 
-music_theme = pygame_menu.themes.THEME_DARK.copy()
-music_theme.title_background_color=('#fc3a4b') # This line puts the title background in some kind of red color
-music_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_SIMPLE
-music_theme.title_offset = (20,0)
-music_theme.background_color=('#111010') # Black
-music_theme.widget_font_size = 45
+#------------------------------------------------------
+#
+#Live music menu
+#
+#------------------------------------------------------
+live_theme = pygame_menu.themes.THEME_DARK.copy()
+live_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
+live_theme.title_offset = (20,0)
+live_theme.background_color=('#111010') # Black
+live_theme.widget_font_size = 45
 
-music_menu = pygame_menu.Menu(
+live_menu = pygame_menu.Menu(
     height=650, #height
-    theme=music_theme,
-    title='Music',
-    width=800
+    theme=live_theme,
+    title='',
+    width=800,
+    joystick_enabled=True
     )
 
-music_menu.add.button('Back',pygame_menu.events.BACK)
+live_menu.add_image('D:\Programacion\Programs\mp3\pics\live.jpg', scale=(0.5,0.5),margin=(-370,15))
 
+live_menu.add.button('Back',pygame_menu.events.BACK)
+
+#------------------------------------------------------
+#
+#Classic music menu
+#
+#------------------------------------------------------
+classic_theme = pygame_menu.themes.THEME_DARK.copy()
+classic_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
+classic_theme.title_offset = (20,0)
+classic_theme.background_color=('#111010') # Black
+classic_theme.widget_font_size = 45
+
+classic_menu = pygame_menu.Menu(
+    height=650, #height
+    theme=classic_theme,
+    title='',
+    width=800,
+    joystick_enabled=True
+    )
+
+classic_menu.add_image('D:\Programacion\Programs\mp3\pics\classicmusic.jpg', scale=(0.5,0.5),margin=(-370,15))
+
+classic_menu.add.button('Back',pygame_menu.events.BACK)
+
+#------------------------------------------------------
+#
+#Rock menu
+#
+#------------------------------------------------------
+rock_theme = pygame_menu.themes.THEME_DARK.copy()
+rock_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
+rock_theme.title_offset = (20,0)
+rock_theme.background_color=('#111010') # Black
+rock_theme.widget_font_size = 45
+
+rock_menu = pygame_menu.Menu(
+    height=650, #height
+    theme=rock_theme,
+    title='',
+    width=800,
+    joystick_enabled=True
+    )
+
+rock_menu.add_image('D:\Programacion\Programs\mp3\pics\ock.jpg', scale=(0.5,0.5),margin=(-370,-305))
+
+rock_menu.add.button('Back',pygame_menu.events.BACK)
 #-------------------------------------------------------------------------
 #
 #Playlists Menu
@@ -94,9 +147,9 @@ playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\ock.jpg', scale=(0.2
 
 
 playlists_menu.add.button('Slowed & Reverb', slowed_reverb_menu, margin=(-140,12))
-playlists_menu.add.button('Live', music_menu, margin=(-280,10))
-playlists_menu.add.button('Classic',music_menu, margin=(-252,10))
-playlists_menu.add.button('Rock',music_menu, margin=(-269,10))
+playlists_menu.add.button('Live', live_menu, margin=(-280,10))
+playlists_menu.add.button('Classic',classic_menu, margin=(-252,10))
+playlists_menu.add.button('Rock',rock_menu, margin=(-269,10))
 playlists_menu.add.button('Back',pygame_menu.events.BACK, margin=(-269,0))
 playlists_menu.add_vertical_margin(230)
 
@@ -114,7 +167,8 @@ main_menu = pygame_menu.Menu(
     height=650, #height
     theme=main_menu_theme,
     title='',
-    width=800
+    width=800,
+    joystick_enabled=True
     )
 
 
@@ -126,5 +180,3 @@ main_menu.add.button('Weather', weather_menu,margin=(174,0))
 main_menu.add_vertical_margin(120)
 
 main_menu.mainloop(screen)
-
-#menu.add.button('Quit', pygame_menu.events.EXIT)
