@@ -135,7 +135,7 @@ def rotation_decode(Enc_A):
     else:
         return
 
-def main(playlist):
+def main():
     try:
         init()
         while True :
@@ -146,15 +146,15 @@ def main(playlist):
             state_pb_shuffle = GPIO.input(pb_shuffle)
 
             if state_pb_play == True:
-                play(playlist)
+                play()
             if state_pb_pause == True:
-                pause(playlist)
+                pause()
             if state_pb_skip == True:
-                skip(playlist)
+                skip()
             if state_pb_prev == True:
-                prev(playlist)
+                prev()
             if state_pb_shuffle == True:
-                shuffle(playlist)
+                shuffle()
             time.sleep(1)
  
     except KeyboardInterrupt:
