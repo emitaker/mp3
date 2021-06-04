@@ -26,7 +26,26 @@ weather_menu = pygame_menu.Menu(
 
 weather_menu.add.button('Back',pygame_menu.events.BACK)
 
+#------------------------------------------------------
+#
+#slowed and reverb menu
+#
+#--------------------------------------
+slowed_reverb_theme = pygame_menu.themes.THEME_DARK.copy()
+slowed_reverb_theme.title_background_color=('#fc3a4b') # This line puts the title background in some kind of red color
+slowed_reverb_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_SIMPLE
+slowed_reverb_theme.title_offset = (20,0)
+slowed_reverb_theme.background_color=('#111010') # Black
+slowed_reverb_theme.widget_font_size = 45
 
+slowed_reverb_menu = pygame_menu.Menu(
+    height=650, #height
+    theme=music_theme,
+    title='Music',
+    width=800
+    )
+
+slowed_reverb_menu.add.button('Back',pygame_menu.events.BACK)
 #-------------------------------------------------------------------------
 #
 #Music Menu
@@ -74,7 +93,7 @@ playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\classicmusic.jpg', s
 playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\ock.jpg', scale=(0.25,0.25),margin=(-370,-305))
 
 
-playlists_menu.add.button('Slowed & Reverb', music_menu, margin=(-140,12))
+playlists_menu.add.button('Slowed & Reverb', slowed_reverb_menu, margin=(-140,12))
 playlists_menu.add.button('Live', music_menu, margin=(-280,10))
 playlists_menu.add.button('Classic',music_menu, margin=(-252,10))
 playlists_menu.add.button('Rock',music_menu, margin=(-269,10))
