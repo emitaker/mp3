@@ -1,10 +1,10 @@
 import pygame
 import pygame_menu
-import main
+import main as music
 import vlc
 
 
-playlist = main.playlist
+playlist = music.playlist
 print(playlist)
 
 pygame.init()
@@ -44,6 +44,7 @@ def slowed_reverb():
     global playlist
     playlist = 1
     print(playlist)
+    music.main()
     slowed_reverb_theme = pygame_menu.themes.THEME_DARK.copy()
     slowed_reverb_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
     slowed_reverb_theme.title_offset = (20,0)
@@ -73,6 +74,7 @@ def live():
     global playlist
     playlist = 2
     print(playlist)
+    music.main()
     live_theme = pygame_menu.themes.THEME_DARK.copy()
     live_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
     live_theme.title_offset = (20,0)
@@ -103,6 +105,7 @@ def classic():
     global playlist
     playlist = 3
     print(playlist)
+    music.main()
     classic_theme = pygame_menu.themes.THEME_DARK.copy()
     classic_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
     classic_theme.title_offset = (20,0)
@@ -133,6 +136,7 @@ def rock():
     global playlist
     playlist = 4
     print(playlist)
+    music.main()
     rock_theme = pygame_menu.themes.THEME_DARK.copy()
     rock_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
     rock_theme.title_offset = (20,0)
