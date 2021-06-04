@@ -5,7 +5,6 @@ import vlc
 
 
 playlist = music.playlist
-print(playlist)
 
 pygame.init()
 screen = pygame.display.set_mode((800, 650))
@@ -44,7 +43,6 @@ def slowed_reverb():
     global playlist
     playlist = 1
     print(playlist)
-    music.main()
     slowed_reverb_theme = pygame_menu.themes.THEME_DARK.copy()
     slowed_reverb_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_NONE
     slowed_reverb_theme.title_offset = (20,0)
@@ -61,10 +59,10 @@ def slowed_reverb():
 
     #slowed_reverb_menu.add_image('D:\Programacion\Programs\mp3\pics\slow.jpg', scale=(0.5,0.5),margin=(-370,15))
     slowed_reverb_menu.add_image('/home/pi/Documents/mp3/pics/slow.jpg', scale=(0.5,0.5),margin=(-370,15))
-
+    
     slowed_reverb_menu.add.button('Back',playlists)
     slowed_reverb_menu.mainloop(screen)
-
+    music.main(playlist)
 #------------------------------------------------------
 #
 #Live music menu
