@@ -56,7 +56,8 @@ def slowed_reverb():
             joystick_enabled=True
         )
 
-    slowed_reverb_menu.add_image('D:\Programacion\Programs\mp3\pics\slow.jpg', scale=(0.5,0.5),margin=(-370,15))
+    #slowed_reverb_menu.add_image('D:\Programacion\Programs\mp3\pics\slow.jpg', scale=(0.5,0.5),margin=(-370,15))
+    slowed_reverb_menu.add_image('/home/pi/Documents/mp3/pics/slow.jpg', scale=(0.5,0.5),margin=(-370,15))
 
     slowed_reverb_menu.add.button('Back',playlists)
     slowed_reverb_menu.mainloop(screen)
@@ -82,7 +83,9 @@ def live():
         joystick_enabled=True
         )
 
-    live_menu.add_image('D:\Programacion\Programs\mp3\pics\live.jpg', scale=(0.5,0.5),margin=(-370,15))
+    #live_menu.add_image('D:\Programacion\Programs\mp3\pics\live.jpg', scale=(0.5,0.5),margin=(-370,15))
+    live_menu.add_image('/home/pi/Documents/mp3/pics/live.jpg', scale=(0.5,0.5),margin=(-370,15))
+
 
     live_menu.add.button('Back',playlists)
     live_menu.mainloop(screen)
@@ -108,7 +111,9 @@ def classic():
         joystick_enabled=True
         )
 
-    classic_menu.add_image('D:\Programacion\Programs\mp3\pics\classicmusic.jpg', scale=(0.5,0.5),margin=(-370,15))
+    #classic_menu.add_image('D:\Programacion\Programs\mp3\pics\classicmusic.jpg', scale=(0.5,0.5),margin=(-370,15))
+    classic_menu.add_image('/home/pi/Documents/mp3/pics/classicmusic.jpg', scale=(0.5,0.5),margin=(-370,15))
+
 
     classic_menu.add.button('Back',playlists)
     classic_menu.mainloop(screen)
@@ -134,7 +139,9 @@ def rock():
         joystick_enabled=True
         )
 
-    rock_menu.add_image('D:\Programacion\Programs\mp3\pics\ock.jpg', scale=(0.5,0.5),margin=(-370,-305))
+    #rock_menu.add_image('D:\Programacion\Programs\mp3\pics\ock.jpg', scale=(0.5,0.5),margin=(-370,-305))
+    rock_menu.add_image('/home/pi/Documents/mp3/pics/ock.jpg', scale=(0.5,0.5),margin=(-370,-305))
+
 
     rock_menu.add.button('Back',playlists)
     rock_menu.mainloop(screen)
@@ -158,10 +165,16 @@ def playlists():
         width=800,
         joystick_enabled=True
         )
-    playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\slow.jpg', scale=(0.25,0.25),margin=(-370,15))
-    playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\live.jpg', scale=(0.25,0.25),margin=(-370,15))
-    playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\classicmusic.jpg', scale=(0.09,0.09),margin=(-370,15))
-    playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\ock.jpg', scale=(0.25,0.25),margin=(-370,-305))
+
+    #playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\slow.jpg', scale=(0.25,0.25),margin=(-370,15))
+    #playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\live.jpg', scale=(0.25,0.25),margin=(-370,15))
+    #playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\classicmusic.jpg', scale=(0.09,0.09),margin=(-370,15))
+    #playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\ock.jpg', scale=(0.25,0.25),margin=(-370,-305))
+    
+    playlists_menu.add_image('/home/pi/Documents/mp3/pics/slow.jpg', scale=(0.25,0.25),margin=(-370,15))
+    playlists_menu.add_image('/home/pi/Documents/mp3/pics/live.jpg', scale=(0.25,0.25),margin=(-370,15))
+    playlists_menu.add_image('/home/pi/Documents/mp3/pics/classicmusic.jpg', scale=(0.09,0.09),margin=(-370,15))
+    playlists_menu.add_image('/home/pi/Documents/mp3/pics/ock.jpg', scale=(0.25,0.25),margin=(-370,-305))
 
 
     playlists_menu.add.button('Slowed & Reverb', slowed_reverb, margin=(-140,12))
@@ -192,9 +205,11 @@ def main_menu():
         joystick_enabled=True
         )
 
+    #menu.add_image('D:\Programacion\Programs\mp3\pics\musicicon2.png', scale=(.2,.2),margin=(-170,-211))
+    #menu.add_image('D:\Programacion\Programs\mp3\pics\weather.png', scale=(.2,.2),margin=(170,20))
 
-    menu.add_image('D:\Programacion\Programs\mp3\pics\musicicon2.png', scale=(.2,.2),margin=(-170,-211))
-    menu.add_image('D:\Programacion\Programs\mp3\pics\weather.png', scale=(.2,.2),margin=(170,20))
+    menu.add_image('/home/pi/Documents/mp3/pics/musicicon2.png', scale=(.2,.2),margin=(-170,-211))
+    menu.add_image('/home/pi/Documents/mp3/pics/weather.png', scale=(.2,.2),margin=(170,20))
 
     menu.add.button('Music', playlists, margin=(-167,-85))
     menu.add.button('Weather', weather,margin=(174,0))
