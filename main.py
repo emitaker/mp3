@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 import random
 import MediaInfo #to do
 import playlists
+import interface
 
 pb_play = 17 #pin 11
 pb_pause = 27 #pin 13
@@ -134,7 +135,7 @@ def rotation_decode(Enc_A):
     else:
         return
 
-def main():
+def main(playlist):
     try:
         init()
         while True :
@@ -145,16 +146,17 @@ def main():
             state_pb_shuffle = GPIO.input(pb_shuffle)
 
             if state_pb_play == True:
-                play()
+                play(playlist)
             if state_pb_pause == True:
-                pause()
+                pause(playlist)
             if state_pb_skip == True:
-                skip()
+                skip(playlist)
             if state_pb_prev == True:
-                prev()
+                prev(playlist)
             if state_pb_shuffle == True:
-                shuffle()
+                shuffle(playlist)
             time.sleep(1)
  
     except KeyboardInterrupt:
         GPIO.cleanup()
+ 
