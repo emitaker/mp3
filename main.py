@@ -412,7 +412,7 @@ def main():
             current_menu = menu.get_current()
 
             if current_menu.get_title() != 'MENU' or not menu.is_enabled():
-                if playlist = 1:
+                if playlist == 1:
                     slowed_reverb_screen()
                     if state_pb_play == True:
                         play()
@@ -425,7 +425,7 @@ def main():
                     if state_pb_shuffle == True:
                         shuffle()
                     time.sleep(1)
-                elif playlist = 2:
+                elif playlist == 2:
                     live_screen()
                     if state_pb_play == True:
                         play()
@@ -438,7 +438,7 @@ def main():
                     if state_pb_shuffle == True:
                         shuffle()
                     time.sleep(1)
-                elif playlist = 3:
+                elif playlist == 3:
                     classic_screen()
                     if state_pb_play == True:
                         play()
@@ -451,7 +451,7 @@ def main():
                     if state_pb_shuffle == True:
                         shuffle()
                     time.sleep(1)
-                elif playlist = 4:
+                elif playlist == 4:
                     rock_screen()
                     if state_pb_play == True:
                         play()
