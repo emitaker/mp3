@@ -4,19 +4,26 @@ import RPi.GPIO as GPIO
 import random
 import MediaInfo #to do
 import playlists
-import interface
+import pygame
+import pygame_menu
+import serial
 
 pb_play = 17 #pin 11
 pb_pause = 27 #pin 13
 pb_skip = 22 #pin 15
 pb_prev = 5 #pin 29
 pb_shuffle = 6 #pin 31
-Enc_A = 18  
-Enc_B = 16 
+Enc_A = 18
+Enc_B = 16
 
-playlist = 1 #aqui ver lo del menu
+playlist = 1
 
 sound = 60
+
+ser = serial.Serial('/dev/ttyACM0',9600)#serial port
+ser.flushInput()
+
+screen = pygame.display.set_mode((800, 650))
 
 def init():
     GPIO.setwarnings(True)
@@ -31,6 +38,29 @@ def init():
     GPIO.add_event_detect(Enc_A, GPIO.RISING, callback=rotation_decode, bouncetime=10)
     return
 
+
+def slowed_reverb():
+    global playlist
+    playlist = 1
+    print(playlist)
+
+
+def live():
+    global playlist
+    playlist = 2
+    print(playlist)
+
+
+def classic():
+    global playlist
+    playlist = 3
+    print(playlist)
+
+
+def rock():
+    global playlist
+    playlist = 4
+    print(playlist)
 
 def play():
     '''Play the music when the button is pushed'''
@@ -100,7 +130,7 @@ def rotation_decode(Enc_A):
     time.sleep(0.002)
     Switch_A = GPIO.input(Enc_A)
     Switch_B = GPIO.input(Enc_B)
- 
+
     if (Switch_A == 1) and (Switch_B == 0):
         sound += 1
         if (playlist == 1):
@@ -117,7 +147,7 @@ def rotation_decode(Enc_A):
         while Switch_B == 1:
             Switch_B = GPIO.input(Enc_B)
         return
- 
+
     elif (Switch_A == 1) and (Switch_B == 1):
         sound -= 1
         if (playlist == 1):
@@ -127,7 +157,7 @@ def rotation_decode(Enc_A):
         elif (playlist == 3):
             playlists.cl_list_player.get_media_player().audio_set_volume(sound)
         elif(playlist == 4):
-            playlists.rock_list_player.get_media_player().audio_set_volume(sound)        
+            playlists.rock_list_player.get_media_player().audio_set_volume(sound)
         print("volume: ", sound, " -")
         while Switch_A == 1:
             Switch_A = GPIO.input(Enc_A)
@@ -156,7 +186,6 @@ def main():
             if state_pb_shuffle == True:
                 shuffle()
             time.sleep(1)
- 
+
     except KeyboardInterrupt:
         GPIO.cleanup()
- 
