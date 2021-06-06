@@ -28,7 +28,7 @@ bullet.color("red")
 bullet.hideturtle()
 bullet.setheading(90)
 bullet_state = "ready"
-ser = serial.Serial('com9',9600)#-----------------------------------------------------------------------------
+ser = serial.Serial('/dev/ttyACM0',9600)#-----------------------------------------------------------------------------
 ser.flushInput()#--------------------------------------------------------------------------------
 enemies = []
 TheGameIsRunning = True
@@ -42,7 +42,7 @@ for enemy in enemies:#for every enemy these are the things it should do
     enemy.goto(-280,260)
     enemy.setheading(0)
     enemy.goto(random.randint(-270,270),random.randint(200,265))
-def left():#for making the player go left, basically decreases the x coor, however if it tries to go out of the screen then it will not allow the player to go more left 
+def left():#for making the player go left, basically decreases the x coor, however if it tries to go out of the screen then it will not allow the player to go more left
     player.setx(player.xcor() - 10)
     if bullet_state == "ready":
         bullet.goto(player.xcor(),player.ycor() + 10)
@@ -62,7 +62,7 @@ def shoot():
         bullet.goto(player.xcor(),player.ycor()+10)
         bullet_state = "fire"
         bullet.showturtle()
-        for i in range(54):                                                                                               
+        for i in range(54):
             bullet.sety(bullet.ycor()+2)
 score = 0
 enemy_speed = 10
@@ -80,33 +80,33 @@ while True:
     elif decoded_bytes == "right":
         right()
     elif decoded_bytes == "down":
-        shoot()  
+        shoot()
     if bullet_state == "fire":#if bullet state is in the fire mode, then the bullet should fire
         bullet.showturtle()
-        for i in range(54): 
+        for i in range(54):
             bullet.sety(bullet.ycor() + 1)
     if bullet.ycor() > 265:# if bullet goes of the screen then the state will be set to ready again, so that the player can fire the bullet
         bullet.hideturtle()
         bullet_state = "ready"
         bullet.goto(player.xcor(),player.ycor()+10)
-    def collision(ob1,ob2):#function checks whether 2 objects have collided or not  
+    def collision(ob1,ob2):#function checks whether 2 objects have collided or not
         collision=math.sqrt(math.pow(ob1.xcor()-ob2.xcor(),2)+math.pow(ob1.ycor()-ob2.ycor(),2))#calculates the distance between the 2 objects using the pythagorean theoram
         if collision < 25:#cheks if the distance between the 2 objects falls under a certain value and gives a boolean value based on that
             return True
         else:
             return False
     for enemy in enemies:# for every enemy:
-        if TheGameIsRunning:# if the the game is running       
-            enemy.forward(enemy_speed)#enemy moves in a zig-zag pattern like the the enemies in the original space invaders do  
+        if TheGameIsRunning:# if the the game is running
+            enemy.forward(enemy_speed)#enemy moves in a zig-zag pattern like the the enemies in the original space invaders do
             if enemy.xcor() > 270:
                 enemy.right(90)
                 enemy.forward(20)
-                enemy.right(90)        
+                enemy.right(90)
                 bullet.forward(enemy_speed)
             elif enemy.xcor() < -270:
                 enemy.left(90)
                 enemy.forward(20)
-                enemy.left(90)       
+                enemy.left(90)
                 bullet.forward(enemy_speed)
             if collision(bullet,enemy):#if the bullet and the enemy have collided, then that enemy will disappear and the number of enemies will decrease and the bullet state will be set to ready
                 enemy.sety(1000)
@@ -124,7 +124,7 @@ while True:
                     enemy.hideturtle()
                 pen.clear()
                 pen.setposition(-300,-50)
-                pen.write("Game Over!",font=("Courier",80,"bold")) 
+                pen.write("Game Over!",font=("Courier",80,"bold"))
                 pen.setposition(-300,-100)
                 pen.write("Score: ",font=("Courier",65,"bold"))
                 pen.setposition(50,-100)
@@ -133,8 +133,8 @@ while True:
             if enemy_speed > 20:
                 enemy_speed = 20
             if enemy.ycor() < 420 and enemy.ycor() > 300:
-                enemy.sety(1000)    
-    if num_enemies == 0:#if all the enemies are dead then the player wins.  
+                enemy.sety(1000)
+    if num_enemies == 0:#if all the enemies are dead then the player wins.
         bullet.hideturtle()
         player.hideturtle()
         for enemy in enemies:
@@ -142,6 +142,6 @@ while True:
         pen.clear()
         pen.setposition(-300,-50)
         time.sleep(0.02)
-        pen.write("You Win!",font=("Courier",80,"bold")) 
+        pen.write("You Win!",font=("Courier",80,"bold"))
         TheGameIsRunning = False
     screen.update()#updates the scree
