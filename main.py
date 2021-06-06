@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 import random
 import MediaInfo #to do
 import playlists
+import interface
 
 pb_play = 17 #pin 11
 pb_pause = 27 #pin 13
@@ -159,5 +160,3 @@ def main():
     except KeyboardInterrupt:
         GPIO.cleanup()
  
-if __name__ == '__main__':
-    main()
