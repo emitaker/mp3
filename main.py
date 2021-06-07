@@ -54,7 +54,7 @@ def slowed_reverb_screen():
     img = font.render('Slowed & reverb', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
     #Musicicon2
-    image = pygame.image.load('/home/pi/Documents/mp3/pics/slowed&reverb.bmp')
+    image = pygame.image.load('/home/pi/Documents/mp3/pics/slow.bmp')
 
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (50,55))
