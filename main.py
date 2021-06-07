@@ -508,7 +508,7 @@ def main():
             #pushed_event=pygame.event.Event(pygame.USEREVENT, attr1='pushed_event')
             #pygame.event.post(pushed_event)
             pushed_event = pygame.K_ESCAPE
-            print(pushed_event)
+            print("aqui",pushed_event)
             #print(pushed_event.type)
 
         events = pygame.event.get()
