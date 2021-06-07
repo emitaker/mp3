@@ -15,27 +15,27 @@ void loop(){
   
   if(buttonState == LOW){
     Serial.println("pushed");
-    delay(80);
+    delay(250);
   }
   else if(mappedxaxis == 5){
     Serial.println("right");
-    delay(80);
+    delay(250);
   }
   else if(mappedxaxis == -5 || mappedxaxis == -6){
     Serial.println("left");
-    delay(80);
+    delay(250);
   }
   else if(mappedyaxis == -1 || mappedyaxis == 0 || mappedyaxis == -2 || mappedyaxis == -4){
     Serial.println("nothing");
-    delay(80);
+    delay(250);
   }
   else if(mappedyaxis == -5){
     Serial.println("up");
-    delay(80);
+    delay(250);
   }
   else if(mappedyaxis==5 || mappedyaxis==6){
     Serial.println("down");
-    delay(80);
+    delay(250);
   }
  
 }
