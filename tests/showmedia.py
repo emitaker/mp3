@@ -7,6 +7,7 @@ x = playlists.slowed_reverb_player
 x.play_item_at_index(4)
 value = x.is_playing()
 if value:
-    x.get_media_player()
+    y = x.get_media_player()
+    print(y)
 time.sleep(5)
 
