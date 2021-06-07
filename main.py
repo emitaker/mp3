@@ -420,12 +420,12 @@ def main():
         print(decoded_bytes)
         current_menu = menu.get_current()
 
-        if current_menu.get_title() != '' or not menu.is_enabled():
+        if current_menu.get_title() != 'Playlists' or not playlists_menu.is_enabled():
             if playlist == 1:
                 slowed_reverb_screen()
-                playlists.lv_list_player.pause()
-                playlists.cl_list_player.pause()
-                playlists.rock_list_player.pause()
+                playlists.lv_list_player.stop()
+                playlists.cl_list_player.stop()
+                playlists.rock_list_player.stop()
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -441,9 +441,9 @@ def main():
 
             elif playlist == 2:
                 live_screen()
-                playlists.slowed_reverb_player.pause()
-                playlists.cl_list_player.pause()
-                playlists.rock_list_player.pause()
+                playlists.slowed_reverb_player.stop()
+                playlists.cl_list_player.stop()
+                playlists.rock_list_player.stop()
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -458,9 +458,9 @@ def main():
 
             elif playlist == 3:
                 classic_screen()
-                playlists.slowed_reverb_player.pause()
-                playlists.lv_list_player.pause()
-                playlists.rock_list_player.pause()
+                playlists.slowed_reverb_player.stop()
+                playlists.lv_list_player.stop()
+                playlists.rock_list_player.stop()
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -475,9 +475,9 @@ def main():
 
             elif playlist == 4:
                 rock_screen()
-                playlists.slowed_reverb_player.pause()
-                playlists.lv_list_player.pause()
-                playlists.cl_list_player.pause()
+                playlists.slowed_reverb_player.stop()
+                playlists.lv_list_player.stop()
+                playlists.cl_list_player.stop()
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
