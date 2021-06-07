@@ -509,7 +509,7 @@ def main():
             #pygame.event.post(pushed_event)
             pushed_event = pygame.K_ESCAPE
             print(pushed_event)
-            print(pushed_event.type)
+            #print(pushed_event.type)
 
         events = pygame.event.get()
         for event in events:
