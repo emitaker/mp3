@@ -10,6 +10,8 @@ import serial
 
 pygame.init()
 
+ser = serial.Serial('/dev/ttyACM0',9600)#serial port
+ser.flushInput()
 
 pb_play = 17 #pin 11
 pb_pause = 27 #pin 13
@@ -312,8 +314,6 @@ def rotation_decode(Enc_A):
 def main():
 
     init()
-    ser = serial.Serial('/dev/ttyACM0',9600)#serial port
-    ser.flushInput()
     #-------------------------------------------------------------------------
     #
     #Weather Menu
