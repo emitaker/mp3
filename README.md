@@ -4,11 +4,11 @@
 In this repository is all the source code and all the dependencies of the project.
 
 ## Python libraries
-* To play the music we use `Vlc`
+* To play the music we use `Vlc` or better known as `pyvlc`
 * To manage the intervals of time better `time`
-* To use the GPIO ports `RPi.GPIO`
-* `random`
-* To get the info of the songs `MediaInfo`
-
+* To use the GPIO ports of the raspberry pi `RPi.GPIO` 
+* To get random numbers `random`
+* For our interface we use `pygame 2.0.1` and `pygame_menu 4.1`  
+* To communicate via serial communication with an Arduino Mega `serial` 
 
 
