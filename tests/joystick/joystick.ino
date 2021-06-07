@@ -7,35 +7,35 @@ void setup()
 }
 void loop(){
   int y = 0;
-  int joystickyaxispin = analogRead(A3); 
-  int joystickxaxispin = analogRead(A4);
+  int joystickyaxispin = analogRead(A8); 
+  int joystickxaxispin = analogRead(A9);
   int mappedxaxis = map(joystickxaxispin + 18,0,1023,-6,5);
   int mappedyaxis = map(joystickyaxispin + 18,0,1023,-5,5);
-  buttonState = digitalRead(7);
+  buttonState = digitalRead(0);
   
   if(buttonState == LOW){
     Serial.println("pushed");
-    delay(150);
+    delay(40);
   }
   else if(mappedxaxis == 5){
     Serial.println("right");
-    delay(150);
+    delay(2);
   }
   else if(mappedxaxis == -5 || mappedxaxis == -6){
     Serial.println("left");
-    delay(150);
+    delay(2);
   }
   else if(mappedyaxis == -1 || mappedyaxis == 0 || mappedyaxis == -2 || mappedyaxis == -4){
     Serial.println("nothing");
-    delay(150);
+    delay(2);
   }
   else if(mappedyaxis == -5){
     Serial.println("up");
-    delay(150);
+    delay(2);
   }
   else if(mappedyaxis==5 || mappedyaxis==6){
     Serial.println("down");
-    delay(150);
+    delay(2);
   }
  
 }
