@@ -507,7 +507,7 @@ def main():
         if decoded_bytes == "pushed":
             #pushed_event=pygame.event.Event(pygame.USEREVENT, attr1='pushed_event')
             #pygame.event.post(pushed_event)
-            pushed_event = pygame.event.Event(pygame.K_KEYDOWN(pygame.K_ESCAPE))
+            pushed_event = pygame.event.Event(pygame.KEYDOWN(pygame.K_ESCAPE))
             pygame.event.post(pushed_event)
             print(pushed_event)
             print(pushed_event.type)
