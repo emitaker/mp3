@@ -417,13 +417,15 @@ def main():
 
         ser_bytes = ser.readline()#--------------------------------------------------------------------------------------------------
         decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8")#--------------------------------------------------------------------------------------------------------------
-
+        print(decoded_bytes)
         current_menu = menu.get_current()
 
         if current_menu.get_title() != '' or not menu.is_enabled():
             if playlist == 1:
                 slowed_reverb_screen()
-
+                playlists.lv_list_player.pause()
+                playlists.cl_list_player.pause()
+                playlists.rock_list_player.pause()
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -439,7 +441,9 @@ def main():
 
             elif playlist == 2:
                 live_screen()
-
+                playlists.slowed_reverb_player.pause()
+                playlists.cl_list_player.pause()
+                playlists.rock_list_player.pause()
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -454,7 +458,9 @@ def main():
 
             elif playlist == 3:
                 classic_screen()
-
+                playlists.slowed_reverb_player.pause()
+                playlists.lv_list_player.pause()
+                playlists.rock_list_player.pause()
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -469,7 +475,9 @@ def main():
 
             elif playlist == 4:
                 rock_screen()
-
+                playlists.slowed_reverb_player.pause()
+                playlists.lv_list_player.pause()
+                playlists.cl_list_player.pause()
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
