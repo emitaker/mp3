@@ -334,7 +334,6 @@ def main():
         theme=weather_theme,
         title='Weather',
         width=800,
-        joystick_enabled=True
     )
 
     weather_menu.add.button('Back',pygame_menu.events.BACK)
@@ -357,7 +356,6 @@ def main():
         theme=playlists_theme,
         title='Playlists',
         width=800,
-        joystick_enabled=True
     )
 
     #playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\slow.bmp', scale=(0.25,0.25),margin=(-370,15))
@@ -365,10 +363,10 @@ def main():
     #playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\classicmusic.bmp', scale=(0.09,0.09),margin=(-370,15))
     #playlists_menu.add_image('D:\Programacion\Programs\mp3\pics\ock.bmp', scale=(0.25,0.25),margin=(-370,-305))
 
-    playlists_menu.add_image('/home/pi/Documents/mp3/pics/slow.bmp', scale=(0.25,0.25),margin=(-370,15))
-    playlists_menu.add_image('/home/pi/Documents/mp3/pics/live.bmp', scale=(0.25,0.25),margin=(-370,15))
-    playlists_menu.add_image('/home/pi/Documents/mp3/pics/classicmusic.bmp', scale=(0.09,0.09),margin=(-370,15))
-    playlists_menu.add_image('/home/pi/Documents/mp3/pics/ock.bmp', scale=(0.25,0.25),margin=(-370,-305))
+    playlists_menu.add.image('/home/pi/Documents/mp3/pics/slow.bmp', scale=(0.25,0.25),margin=(-370,15))
+    playlists_menu.add.image('/home/pi/Documents/mp3/pics/live.bmp', scale=(0.25,0.25),margin=(-370,15))
+    playlists_menu.add.image('/home/pi/Documents/mp3/pics/classicmusic.bmp', scale=(0.09,0.09),margin=(-370,15))
+    playlists_menu.add.image('/home/pi/Documents/mp3/pics/ock.bmp', scale=(0.25,0.25),margin=(-370,-305))
 
 
     playlists_menu.add.button('Slowed & Reverb',slowed_reverb , margin=(-140,12))
@@ -376,7 +374,7 @@ def main():
     playlists_menu.add.button('Classic',classic , margin=(-252,10))
     playlists_menu.add.button('Rock',rock ,margin=(-269,10))
     playlists_menu.add.button('Back',pygame_menu.events.BACK, margin=(-269,0))
-    playlists_menu.add_vertical_margin(230)
+    playlists_menu.widgets.VMargin(230)
 
 
     #-------------------------------------------------------------------------
@@ -400,13 +398,13 @@ def main():
     #menu.add_image('D:\Programacion\Programs\mp3\pics\musicicon2.bmp', scale=(.2,.2),margin=(-170,-211))
     #menu.add_image('D:\Programacion\Programs\mp3\pics\weather.bmp', scale=(.2,.2),margin=(170,20))
 
-    menu.add_image('/home/pi/Documents/mp3/pics/musicicon2.bmp', scale=(.2,.2),margin=(-170,-211))
-    menu.add_image('/home/pi/Documents/mp3/pics/weather.bmp', scale=(.2,.2),margin=(170,20))
+    menu.add.image('/home/pi/Documents/mp3/pics/musicicon2.bmp', scale=(.2,.2),margin=(-170,-211))
+    menu.add.image('/home/pi/Documents/mp3/pics/weather.bmp', scale=(.2,.2),margin=(170,20))
 
     #menu.add.button('Music', playlists_menu, margin=(-167,-85))
     menu.add.button('Music', playlists_menu, margin=(-167,-85))
     menu.add.button('Weather', weather_menu,margin=(174,0))
-    menu.add_vertical_margin(120)
+    menu.widgets.VMargin(120)
 
 
     while True :
