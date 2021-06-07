@@ -517,12 +517,12 @@ def main():
             print(event)
             if event.type == pygame.QUIT:
                 exit()
-            #elif event.type == 32847 and current_menu.get_title() == '':
-            #    menu.toggle()
-            #elif event.type == 32847 and current_menu.get_title() == 'Playlists':
-            #    playlists_menu.toggle()
-            #elif event.type == 32847 and current_menu.get_title() == 'Weather':
-            #    weather_menu.toggle()
+            elif event.type == 27 and current_menu.get_title() == '':
+                menu.toggle()
+            elif event.type == 27 and current_menu.get_title() == 'Playlists':
+                playlists_menu.toggle()
+            elif event.type == 27 and current_menu.get_title() == 'Weather':
+                weather_menu.toggle()
 
         if menu.is_enabled():
             menu.draw(screen)
