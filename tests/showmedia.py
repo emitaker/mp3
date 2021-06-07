@@ -2,10 +2,14 @@ import playlists
 import vlc
 import time
 
-playlists.slowed_reverb_player.play_item_at_index(4)
+
 x = playlists.slowed_reverb_player
-value = playlists.slowed_reverb_player.is_playing()
+x.play_item_at_index(4)
+value = x.is_playing()
 if value:
-    print(x[4])
+    if x == x[3]:
+        print("cancion 4")
+    if == x[4]:
+        print("cancion 5")
 time.sleep(5)
 
