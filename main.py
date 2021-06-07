@@ -1,4 +1,4 @@
-.bmpimport vlc
+import vlc
 import time
 import RPi.GPIO as GPIO
 import random
@@ -55,7 +55,7 @@ def slowed_reverb_screen():
     screen.blit(img, (110,65))
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/slowed&reverb.bmp')
-    
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (50,55))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/pausab.bmp')
