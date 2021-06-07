@@ -126,8 +126,8 @@ menu = pygame_menu.Menu(
 #menu.add_image('D:\Programacion\Programs\mp3\pics\musicicon2.png', scale=(.2,.2),margin=(-170,-211))
 #menu.add_image('D:\Programacion\Programs\mp3\pics\weather.png', scale=(.2,.2),margin=(170,20))
 
-menu.add_image('/home/pi/Documents/mp3/pics/musicicon2.png', scale=(.2,.2),margin=(-170,-211))
-menu.add_image('/home/pi/Documents/mp3/pics/weather.png', scale=(.2,.2),margin=(170,20))
+menu.add.image('/home/pi/Documents/mp3/pics/musicicon2.png', scale=(.2,.2),margin=(-170,-211))
+menu.add.image('/home/pi/Documents/mp3/pics/weather.png', scale=(.2,.2),margin=(170,20))
 
 menu.add.button('Music', playlists, margin=(-167,-85))
 menu.add.button('Weather', weather,margin=(174,0))
