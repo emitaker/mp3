@@ -52,7 +52,7 @@ def slowed_reverb_screen():
     font = pygame.font.SysFont(None, 48)
     img = font.render('Slowed & reverb', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
-    font2 = pygame.font.SysFont(None, 30)
+    font2 = pygame.font.SysFont(None, 20)
     img = font.render('Aunque no sea conmigo (slowed & reverb) - Cafe Tacvba', True, ('#f6f6f6'))
     screen.blit(img, (100,405))
 
