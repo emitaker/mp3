@@ -18,12 +18,12 @@ def menu():
         font = pygame.font.SysFont(None, 48)
         img = font.render('live', True, ('#f6f6f6')) # #f6f6f6 = white
         screen.blit(img, (110,65))
-        font2 = pygame.font.SysFont(None, 30)
-        img = font2.render('Puesto - Babasonicos', True, ('#f6f6f6'))
-        screen.blit(img, (280,405))
+        font2 = pygame.font.SysFont(None, 25)
+        img = font2.render('Aunque no sea conmigo (slowed & reverb) - Cafe Tacvba', True, ('#f6f6f6'))
+        screen.blit(img, (100,405))
 
-        image = pygame.image.load('D:\Programacion\Programs\mp3\pics\ock_logo.bmp')
-        image = pygame.transform.scale(image, (380,230))
+        image = pygame.image.load('D:\Programacion\Programs\mp3\pics\slow_logo.bmp')
+        image = pygame.transform.scale(image, (380,200))
         screen.blit(image, (200,150))
 
         #Musicicon2
