@@ -52,6 +52,14 @@ def slowed_reverb_screen():
     font = pygame.font.SysFont(None, 48)
     img = font.render('Slowed & reverb', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
+    font2 = pygame.font.SysFont(None, 30)
+    img = font.render('Aunque no sea conmigo (slowed & reverb) - Cafe Tacvba', True, ('#f6f6f6'))
+    screen.blit(img, (100,405))
+
+    image = pygame.image.load('/home/pi/Documents/mp3/pics/slow_logo.bmp')
+    image = pygame.transform.scale(image, (380,200))
+    screen.blit(image, (200,150))
+
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/slow.bmp')
 
@@ -94,6 +102,14 @@ def live_screen():
     font = pygame.font.SysFont(None, 48)
     img = font.render('Live', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
+    font2 = pygame.font.SysFont(None, 30)
+    img = font.render('Las Flores - Cafe Tacvba', True, ('#f6f6f6'))
+    screen.blit(img, (280,405))
+
+    image = pygame.image.load('/home/pi/Documents/mp3/pics/live_logo.bmp')
+    image = pygame.transform.scale(image, (230,230))
+    screen.blit(image, (285,150))
+
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/live.bmp')
 
@@ -136,6 +152,14 @@ def classic_screen():
     font = pygame.font.SysFont(None, 48)
     img = font.render('Classic', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
+
+    font2 = pygame.font.SysFont(None, 30)
+    img = font.render('Aria da corda sol - Bach', True, ('#f6f6f6'))
+    screen.blit(img, (280,405))
+
+    image = pygame.image.load('/home/pi/Documents/mp3/pics/classic_logo.bmp')
+    image = pygame.transform.scale(image, (380,230))
+    screen.blit(image, (200,150))
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/classicmusic.bmp')
 
@@ -178,6 +202,15 @@ def rock_screen():
     font = pygame.font.SysFont(None, 48)
     img = font.render('Rock', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
+
+    font2 = pygame.font.SysFont(None, 30)
+    img = font.render('Puesto - Babasonicos', True, ('#f6f6f6'))
+    screen.blit(img, (280,405))
+
+    image = pygame.image.load('/home/pi/Documents/mp3/pics/ock_logo.bmp')
+    image = pygame.transform.scale(image, (380,230))
+    screen.blit(image, (200,150))
+
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/ock.bmp')
 
