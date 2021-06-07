@@ -1,6 +1,6 @@
 import playlists
 import vlc
 
-playlists.sr_inst.vlm_show_media('')
-x = playlists.sr_inst.vlm_show_media('')
+playlists.slowed_reverb_player.vlm_show_media('')
+x = playlists.slowed_reverb_player.vlm_show_media('')
 print(x)
