@@ -3,9 +3,10 @@ import vlc
 import time
 
 playlists.slowed_reverb_player.play_item_at_index(4)
+x = playlists.slowed_reverb_player
 value = playlists.slowed_reverb_player.is_playing()
 if value:
-    state = playlists.slowed_reverb_player.get_state() 
-    print(state)
+    for song in x:
+        song
 time.sleep(5)
 
