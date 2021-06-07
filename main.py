@@ -28,8 +28,6 @@ screen = pygame.display.set_mode((800, 650))
 def init():
     GPIO.setwarnings(True)
     GPIO.setmode(GPIO.BCM)
-    ser = serial.Serial('/dev/ttyACM0',9600)#serial port
-    ser.flushInput()
     GPIO.setup(pb_play, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.setup(pb_pause, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.setup(pb_skip, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -314,7 +312,8 @@ def rotation_decode(Enc_A):
 def main():
 
     init()
-
+    ser = serial.Serial('/dev/ttyACM0',9600)#serial port
+    ser.flushInput()
     #-------------------------------------------------------------------------
     #
     #Weather Menu
@@ -417,7 +416,7 @@ def main():
         decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8")#--------------------------------------------------------------------------------------------------------------
         print(decoded_bytes)
 
-        
+
         current_menu = menu.get_current()
 
         if current_menu.get_title() != 'Playlists' or not playlists_menu.is_enabled():
