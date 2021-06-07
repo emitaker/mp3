@@ -55,31 +55,31 @@ def slowed_reverb_screen():
     screen.blit(img, (110,65))
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/slowed&reverb.bmp')
-    image.convert()
+    
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (50,55))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/pausab.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (65,65))
     screen.blit(image, (375,450))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/playb.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (65,65))
     screen.blit(image, (310,451))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/prevsi.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (62,62))
     screen.blit(image, (242,452))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/ffsi.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (58,58))
     screen.blit(image, (445,452))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/shufflew.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (512,456))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/vol.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (188,456))
 
@@ -97,31 +97,31 @@ def live_screen():
     screen.blit(img, (110,65))
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/live.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (50,55))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/pausab.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (65,65))
     screen.blit(image, (375,450))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/playb.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (65,65))
     screen.blit(image, (310,451))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/prevsi.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (62,62))
     screen.blit(image, (242,452))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/ffsi.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (58,58))
     screen.blit(image, (445,452))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/shufflew.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (512,456))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/vol.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (188,456))
 
@@ -139,31 +139,31 @@ def classic_screen():
     screen.blit(img, (110,65))
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/classicmusic.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (50,55))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/pausab.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (65,65))
     screen.blit(image, (375,450))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/playb.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (65,65))
     screen.blit(image, (310,451))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/prevsi.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (62,62))
     screen.blit(image, (242,452))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/ffsi.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (58,58))
     screen.blit(image, (445,452))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/shufflew.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (512,456))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/vol.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (188,456))
 
@@ -181,31 +181,31 @@ def rock_screen():
     screen.blit(img, (110,65))
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/ock.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (50,55))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/pausab.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (65,65))
     screen.blit(image, (375,450))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/playb.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (65,65))
     screen.blit(image, (310,451))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/prevsi.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (62,62))
     screen.blit(image, (242,452))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/ffsi.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (58,58))
     screen.blit(image, (445,452))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/shufflew.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (512,456))
     image = pygame.image.load('/home/pi/Documents/mp3/pics/vol.bmp')
-    image.convert()
+
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (188,456))
 
