@@ -425,8 +425,8 @@ def main():
                 playlists.lv_list_player.stop()
                 playlists.cl_list_player.stop()
                 playlists.rock_list_player.stop()
-                ser_bytes = ser.readline() #serial read
-                decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #this line is to understand what arduino sends
+                #ser_bytes = ser.readline() #serial read
+                #decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #this line is to understand what arduino sends
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -445,8 +445,8 @@ def main():
                 playlists.slowed_reverb_player.stop()
                 playlists.cl_list_player.stop()
                 playlists.rock_list_player.stop()
-                ser_bytes = ser.readline() #serial read
-                decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #this line is to understand what arduino sends
+                #ser_bytes = ser.readline() #serial read
+                #decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #this line is to understand what arduino sends
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -464,8 +464,8 @@ def main():
                 playlists.slowed_reverb_player.stop()
                 playlists.lv_list_player.stop()
                 playlists.rock_list_player.stop()
-                ser_bytes = ser.readline() #serial read
-                decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #this line is to understand what arduino sends
+                #ser_bytes = ser.readline() #serial read
+                #decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #this line is to understand what arduino sends
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -483,8 +483,8 @@ def main():
                 playlists.slowed_reverb_player.stop()
                 playlists.lv_list_player.stop()
                 playlists.cl_list_player.stop()
-                ser_bytes = ser.readline() #serial read
-                decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #this line is to understand what arduino sends
+                #ser_bytes = ser.readline() #serial read
+                #decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #this line is to understand what arduino sends
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
