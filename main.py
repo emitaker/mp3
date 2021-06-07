@@ -419,7 +419,7 @@ def main():
 
         current_menu = menu.get_current()
 
-        if (current_menu.get_title() != '' or not menu.is_enabled()) or (current_menu.get_title() != 'Playlists' or not playlists_menu.is_enabled()):
+        if current_menu.get_title() != '' or not menu.is_enabled():
             if playlist == 1:
                 slowed_reverb_screen()
                 playlists.lv_list_player.stop()
