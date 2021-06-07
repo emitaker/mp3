@@ -414,7 +414,6 @@ def main():
         state_pb_shuffle = GPIO.input(pb_shuffle)
         ser_bytes = ser.readline() #Undestanding arduino
         decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #translation
-        print(decoded_bytes)
 
 
         current_menu = menu.get_current()
@@ -507,12 +506,9 @@ def main():
         if decoded_bytes == "pushed":
             pushed_event=pygame.event.Event(pygame.USEREVENT, attr1='Pushed_event')
             pygame.event.post(pushed_event)
-            print(pushed_event)
-            print(pushed_event.type)
 
         events = pygame.event.get()
         for event in events:
-            print(event)
             if event.type == pygame.QUIT:
                 exit()
             elif event.type == 32847 and current_menu.get_title() == '':
@@ -532,7 +528,7 @@ def main():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE and \
                         current_menu.get_title() == 'Weather':
-                    weather.toggle()
+                    weather_menu.toggle()
 
         if menu.is_enabled():
             menu.draw(screen)
