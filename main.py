@@ -374,7 +374,7 @@ def main():
     playlists_menu.add.button('Classic',classic , margin=(-252,10))
     playlists_menu.add.button('Rock',rock ,margin=(-269,10))
     playlists_menu.add.button('Back',pygame_menu.events.BACK, margin=(-269,0))
-    playlists_menu.add.VMargin(230)
+    #playlists_menu.add.VMargin(230)
 
 
     #-------------------------------------------------------------------------
@@ -404,7 +404,7 @@ def main():
     #menu.add.button('Music', playlists_menu, margin=(-167,-85))
     menu.add.button('Music', playlists_menu, margin=(-167,-85))
     menu.add.button('Weather', weather_menu,margin=(174,0))
-    menu.add.VMargin(120)
+    #menu.add.VMargin(120)
 
 
     while True :
