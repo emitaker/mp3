@@ -505,8 +505,10 @@ def main():
             screen.fill('#111010')
 
         if decoded_bytes == "pushed":
-            pushed_event=pygame.event.Event(pygame.USEREVENT, attr1='pushed_event')
-            pygame.event.post(pushed_event)
+            #pushed_event=pygame.event.Event(pygame.USEREVENT, attr1='pushed_event')
+            #pygame.event.post(pushed_event)
+            pushed_event = pygame.K_ESCAPE
+            print(pushed_event)
             print(pushed_event.type)
 
         events = pygame.event.get()
@@ -514,12 +516,12 @@ def main():
             print(event)
             if event.type == pygame.QUIT:
                 exit()
-            elif event.type == 32847 and current_menu.get_title() == '':
-                menu.toggle()
-            elif event.type == 32847 and current_menu.get_title() == 'Playlists':
-                playlists_menu.toggle()
-            elif event.type == 32847 and current_menu.get_title() == 'Weather':
-                weather_menu.toggle()
+            #elif event.type == 32847 and current_menu.get_title() == '':
+            #    menu.toggle()
+            #elif event.type == 32847 and current_menu.get_title() == 'Playlists':
+            #    playlists_menu.toggle()
+            #elif event.type == 32847 and current_menu.get_title() == 'Weather':
+            #    weather_menu.toggle()
 
         if menu.is_enabled():
             menu.draw(screen)
