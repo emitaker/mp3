@@ -505,11 +505,11 @@ def main():
             screen.fill('#111010')
 
         if decoded_bytes == "pushed":
-            #pushed_event=pygame.event.Event(pygame.USEREVENT, attr1='pushed_event')
-            #pygame.event.post(pushed_event)
-            pushed_event = pygame.event.Event(pygame.K_ESCAPE)
+            pushed_event=pygame.event.Event(pygame.USEREVENT, attr1='pushed_event')
             pygame.event.post(pushed_event)
-            print("aqui",pushed_event)
+            #pushed_event = pygame.event.Event(pygame.K_KEYDOWM(pygame.K_ESCAPE))
+            #pygame.event.post(pushed_event)
+            print(pushed_event)
             print(pushed_event.type)
 
         events = pygame.event.get()
