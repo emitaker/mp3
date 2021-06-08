@@ -355,7 +355,7 @@ def main():
     #-------------------------------------------------------------------------
 
     weather_theme = pygame_menu.themes.THEME_DARK.copy()
-    weather_theme.title_background_color=('#fc3a4b') # This line puts the title background in some kind of red color
+    weather_theme.title_background_color=('#45ecf0') # This line puts the title background in some kind of red color
     weather_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_SIMPLE
     weather_theme.title_offset = (20,0)
     weather_theme.background_color=('#111010') # Black
@@ -367,6 +367,9 @@ def main():
         title='Weather',
         width=800,
     )
+
+    weather_menu.add.label("Temperature: 23.2°", align=pygame_menu.locals.ALIGN_CENTER)
+    weather_menu.add.label("CO2 : 700", align=pygame_menu.locals.ALIGN_CENTER)
 
     weather_menu.add.button('Back',pygame_menu.events.BACK)
 
