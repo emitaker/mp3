@@ -557,7 +557,7 @@ def main():
                     menu.toggle()
                 elif event.key == pygame.K_ESCAPE and \
                         current_menu.get_title() == 'Playlists':
-                    playlists.toggle()
+                    playlists_menu.toggle()
                 elif event.key == pygame.K_ESCAPE and \
                         current_menu.get_title() == 'Weather':
                     weather_menu.toggle()
