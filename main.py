@@ -347,6 +347,7 @@ def rotation_decode(Enc_A):
 def main():
 
     init()
+
     #-------------------------------------------------------------------------
     #
     #Weather Menu
@@ -470,7 +471,7 @@ def main():
                     prev()
                 if state_pb_shuffle == True:
                     shuffle()
-                time.sleep(1)
+                time.sleep(.5)
 
 
             elif playlist == 2:
@@ -491,7 +492,7 @@ def main():
                     prev()
                 if state_pb_shuffle == True:
                     shuffle()
-                time.sleep(1)
+                time.sleep(.5)
 
             elif playlist == 3:
                 classic_screen()
@@ -511,7 +512,7 @@ def main():
                     prev()
                 if state_pb_shuffle == True:
                     shuffle()
-                time.sleep(1)
+                time.sleep(.5)
 
             elif playlist == 4:
                 rock_screen()
@@ -531,7 +532,7 @@ def main():
                     prev()
                 if state_pb_shuffle == True:
                     shuffle()
-                time.sleep(1)
+                time.sleep(.5)
 
         else:
             screen.fill('#111010')
@@ -554,12 +555,10 @@ def main():
                 if event.key == pygame.K_ESCAPE and \
                         current_menu.get_title() == '':
                     menu.toggle()
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE and \
+                elif event.key == pygame.K_ESCAPE and \
                         current_menu.get_title() == 'Playlists':
                     playlists.toggle()
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE and \
+                elif event.key == pygame.K_ESCAPE and \
                         current_menu.get_title() == 'Weather':
                     weather_menu.toggle()
 
