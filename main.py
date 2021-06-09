@@ -241,6 +241,7 @@ def rock_screen():
     image = pygame.transform.scale(image, (50,50))
     screen.blit(image, (188,456))
 
+
 def play():
     '''Play the music when the button is pushed'''
     if (playlist == 1):
@@ -344,6 +345,7 @@ def rotation_decode(Enc_A):
     else:
         return
 
+
 def main():
 
     init()
@@ -409,7 +411,6 @@ def main():
     playlists_menu.add.button('Classic',classic , margin=(-252,10))
     playlists_menu.add.button('Rock',rock ,margin=(-269,10))
     playlists_menu.add.button('Back',pygame_menu.events.BACK, margin=(-269,0))
-    #playlists_menu.add.VMargin(230)
 
 
     #-------------------------------------------------------------------------
