@@ -16,9 +16,9 @@ def menu():
     while running:
         screen.fill(('#111010'))
         font = pygame.font.SysFont(None, 48)
-        img = font.render('live', True, ('#f6f6f6')) # #f6f6f6 = white
+        img = font.render('Slowed & Reverb', True, ('#f6f6f6')) # #f6f6f6 = white
         screen.blit(img, (110,65))
-        font2 = pygame.font.SysFont(None, 25)
+        font2 = pygame.font.SysFont(None, 30)
         img = font2.render('Aunque no sea conmigo (slowed & reverb) - Cafe Tacvba', True, ('#f6f6f6'))
         screen.blit(img, (100,405))
 
@@ -43,17 +43,27 @@ def menu():
 
         image = pygame.transform.scale(image, (62,62))
         screen.blit(image, (242,452))
+
+        image = pygame.image.load('D:\Programacion\Programs\mp3\pics\ext.png')
+
+        image = pygame.transform.scale(image, (58,58))
+        screen.blit(image, (445,452))
         
         image = pygame.image.load('D:\Programacion\Programs\mp3\pics\shufflew.bmp')
 
         image = pygame.transform.scale(image, (50,50))
         screen.blit(image, (512,456))
+
+        image = pygame.image.load('D:\Programacion\Programs\mp3\pics\ol.png')
+
+        image = pygame.transform.scale(image, (50,50))
+        screen.blit(image, (188,456))
         
 
         pygame.display.update()
         contador += 1
         print(contador)
-        if contador >= 50   :
+        if contador >= 500:
             return 1
         
 
