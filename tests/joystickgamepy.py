@@ -28,7 +28,7 @@ bullet.color("red")
 bullet.hideturtle()
 bullet.setheading(90)
 bullet_state = "ready"
-ser = serial.Serial('/dev/ttyACM0',9600)#-----------------------------------------------------------------------------
+ser = serial.Serial('/dev/ttyACM0',9600)#com9
 ser.flushInput()#--------------------------------------------------------------------------------
 enemies = []
 TheGameIsRunning = True

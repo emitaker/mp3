@@ -10,6 +10,8 @@ import serial
 
 pygame.init()
 
+ser = serial.Serial('/dev/ttyACM0',9600)#serial port
+ser.flushInput()
 
 pb_play = 17 #pin 11
 pb_pause = 27 #pin 13
@@ -50,6 +52,14 @@ def slowed_reverb_screen():
     font = pygame.font.SysFont(None, 48)
     img = font.render('Slowed & reverb', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
+    font2 = pygame.font.SysFont(None, 20)
+    img = font.render('Aunque no sea conmigo (slowed & reverb) - Cafe Tacvba', True, ('#f6f6f6'))
+    screen.blit(img, (100,405))
+
+    image = pygame.image.load('/home/pi/Documents/mp3/pics/slow_logo.bmp')
+    image = pygame.transform.scale(image, (380,200))
+    screen.blit(image, (200,150))
+
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/slow.bmp')
 
@@ -92,6 +102,14 @@ def live_screen():
     font = pygame.font.SysFont(None, 48)
     img = font.render('Live', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
+    font2 = pygame.font.SysFont(None, 30)
+    img = font.render('Las Flores - Cafe Tacvba', True, ('#f6f6f6'))
+    screen.blit(img, (280,405))
+
+    image = pygame.image.load('/home/pi/Documents/mp3/pics/live_logo.bmp')
+    image = pygame.transform.scale(image, (230,230))
+    screen.blit(image, (285,150))
+
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/live.bmp')
 
@@ -134,6 +152,14 @@ def classic_screen():
     font = pygame.font.SysFont(None, 48)
     img = font.render('Classic', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
+
+    font2 = pygame.font.SysFont(None, 30)
+    img = font.render('Aria da corda sol - Bach', True, ('#f6f6f6'))
+    screen.blit(img, (280,405))
+
+    image = pygame.image.load('/home/pi/Documents/mp3/pics/classic_logo.bmp')
+    image = pygame.transform.scale(image, (380,230))
+    screen.blit(image, (200,150))
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/classicmusic.bmp')
 
@@ -176,6 +202,15 @@ def rock_screen():
     font = pygame.font.SysFont(None, 48)
     img = font.render('Rock', True, ('#f6f6f6')) # #f6f6f6 = white
     screen.blit(img, (110,65))
+
+    font2 = pygame.font.SysFont(None, 30)
+    img = font.render('Puesto - Babasonicos', True, ('#f6f6f6'))
+    screen.blit(img, (280,405))
+
+    image = pygame.image.load('/home/pi/Documents/mp3/pics/ock_logo.bmp')
+    image = pygame.transform.scale(image, (380,230))
+    screen.blit(image, (200,150))
+
     #Musicicon2
     image = pygame.image.load('/home/pi/Documents/mp3/pics/ock.bmp')
 
@@ -312,8 +347,7 @@ def rotation_decode(Enc_A):
 def main():
 
     init()
-    ser = serial.Serial('/dev/ttyACM0',9600)#serial port
-    ser.flushInput()
+
     #-------------------------------------------------------------------------
     #
     #Weather Menu
@@ -321,7 +355,7 @@ def main():
     #-------------------------------------------------------------------------
 
     weather_theme = pygame_menu.themes.THEME_DARK.copy()
-    weather_theme.title_background_color=('#fc3a4b') # This line puts the title background in some kind of red color
+    weather_theme.title_background_color=('#45ecf0') # This line puts the title background in some kind of red color
     weather_theme.title_bar_style =  pygame_menu.widgets.MENUBAR_STYLE_SIMPLE
     weather_theme.title_offset = (20,0)
     weather_theme.background_color=('#111010') # Black
@@ -333,6 +367,9 @@ def main():
         title='Weather',
         width=800,
     )
+
+    weather_menu.add.label("Temperature: 23.2°", align=pygame_menu.locals.ALIGN_CENTER)
+    weather_menu.add.label("CO2 : 700", align=pygame_menu.locals.ALIGN_CENTER)
 
     weather_menu.add.button('Back',pygame_menu.events.BACK)
 
@@ -412,19 +449,21 @@ def main():
         state_pb_skip = GPIO.input(pb_skip)
         state_pb_prev = GPIO.input(pb_prev)
         state_pb_shuffle = GPIO.input(pb_shuffle)
-        ser_bytes = ser.readline()#--------------------------------------------------------------------------------------------------
-        decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8")#--------------------------------------------------------------------------------------------------------------
-        print(decoded_bytes)
+        ser_bytes = ser.readline() #Undestanding arduino
+        decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #translation
 
 
         current_menu = menu.get_current()
 
-        if current_menu.get_title() != 'Playlists' or not playlists_menu.is_enabled():
+        if current_menu.get_title() != '' or not menu.is_enabled():
             if playlist == 1:
                 slowed_reverb_screen()
                 playlists.lv_list_player.stop()
                 playlists.cl_list_player.stop()
                 playlists.rock_list_player.stop()
+                ser_bytes = ser.readline() #Undestanding arduino
+                decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #translation
+                
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -435,7 +474,7 @@ def main():
                     prev()
                 if state_pb_shuffle == True:
                     shuffle()
-                time.sleep(1)
+                time.sleep(.5)
 
 
             elif playlist == 2:
@@ -443,6 +482,9 @@ def main():
                 playlists.slowed_reverb_player.stop()
                 playlists.cl_list_player.stop()
                 playlists.rock_list_player.stop()
+                ser_bytes = ser.readline() #Undestanding arduino
+                decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #translation
+                
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -453,13 +495,16 @@ def main():
                     prev()
                 if state_pb_shuffle == True:
                     shuffle()
-                time.sleep(1)
+                time.sleep(.5)
 
             elif playlist == 3:
                 classic_screen()
                 playlists.slowed_reverb_player.stop()
                 playlists.lv_list_player.stop()
                 playlists.rock_list_player.stop()
+                ser_bytes = ser.readline() #Undestanding arduino
+                decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #translation
+            
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -470,13 +515,16 @@ def main():
                     prev()
                 if state_pb_shuffle == True:
                     shuffle()
-                time.sleep(1)
+                time.sleep(.5)
 
             elif playlist == 4:
                 rock_screen()
                 playlists.slowed_reverb_player.stop()
                 playlists.lv_list_player.stop()
                 playlists.cl_list_player.stop()
+                ser_bytes = ser.readline() #Undestanding arduino
+                decoded_bytes = ser_bytes[0:len(ser_bytes)-2].decode("utf-8") #translation
+                
                 if state_pb_play == True:
                     play()
                 if state_pb_pause == True:
@@ -487,25 +535,35 @@ def main():
                     prev()
                 if state_pb_shuffle == True:
                     shuffle()
-                time.sleep(1)
+                time.sleep(.5)
 
         else:
             screen.fill('#111010')
 
         if decoded_bytes == "pushed":
-            pushed_event=pygame.event.Event(pygame.USEREVENT, attr1='pushed_event')
+            pushed_event=pygame.event.Event(pygame.USEREVENT, attr1='Pushed_event')
             pygame.event.post(pushed_event)
-            print(pushed_event.type)
 
         events = pygame.event.get()
         for event in events:
-            print(event)
             if event.type == pygame.QUIT:
                 exit()
             elif event.type == 32847 and current_menu.get_title() == '':
                 menu.toggle()
             elif event.type == 32847 and current_menu.get_title() == 'Playlists':
                 playlists_menu.toggle()
+            elif event.type == 32847 and current_menu.get_title() == 'Weather':
+                weather_menu.toggle()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE and \
+                        current_menu.get_title() == '':
+                    menu.toggle()
+                elif event.key == pygame.K_ESCAPE and \
+                        current_menu.get_title() == 'Playlists':
+                    playlists_menu.toggle()
+                elif event.key == pygame.K_ESCAPE and \
+                        current_menu.get_title() == 'Weather':
+                    weather_menu.toggle()
 
         if menu.is_enabled():
             menu.draw(screen)
