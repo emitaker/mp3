@@ -21,6 +21,6 @@ Main.py is the one that you need to run to check this project. You need:
 * DHT11 temperature sensor
 * Arduino Mega 2560
 
-##Bugs
+## Bugs
 * VLC not showing song information properly.
 * Pygame not changing font size.
